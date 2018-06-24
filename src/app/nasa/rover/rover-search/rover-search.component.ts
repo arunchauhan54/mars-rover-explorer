@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Inject, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {RoverDataFetchService} from "../rover-data-fetch.service";
 
 @Component({
   selector: 'app-rover-search',
@@ -12,7 +11,7 @@ export class RoverSearchComponent {
   roverForm: FormGroup;
   @Output() searchQuery = new EventEmitter<RoverSearch>();
 
-  constructor(@Inject(FormBuilder) private  formBuilder: FormBuilder, private service: RoverDataFetchService) {
+  constructor(@Inject(FormBuilder) private  formBuilder: FormBuilder) {
     this.roverForm = formBuilder.group(
       {
         date: ['', Validators.required],

@@ -2,8 +2,8 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {RoverSearch} from "./rover-search/rover-search.component";
 import {environment} from "../../../environments/environment";
+import {Observable} from "rxjs";
 import {flatMap} from "rxjs/operators";
-import {Observable} from "rxjs/internal/Observable";
 
 @Injectable({
   providedIn: 'root'
@@ -27,12 +27,12 @@ export interface Photos {
 
 export interface RoverResult {
   img_src: string;
-  earth_date:string;
-  camera:Camera;
+  earth_date: string;
+  camera: Camera;
 }
 
 export interface Camera {
-  full_name:string;
-  name:string;
+  full_name: string;
+  name: string;
 
 }
